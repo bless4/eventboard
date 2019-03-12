@@ -8,8 +8,8 @@ class EventListAttendee extends Component {
       <List.Item>
         <Image as='a' size="mini" circular src={attendee.photoURL}/>
       </List.Item>
-    )
+    );
   }
 }
 
-export default EventListAttendee
+export default EventListAttendee;
