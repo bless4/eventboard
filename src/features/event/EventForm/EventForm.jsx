@@ -4,16 +4,23 @@ import { Segment, Form, Button } from 'semantic-ui-react';
 const emptyEvent = {
   title: '',
   date: '',
+<<<<<<< HEAD
   category: '',
   description: '',
   city: '',
   venue: '',
   hostedBy: '',
   hostPhotoURL:''
+=======
+  city: '',
+  venue: '',
+  hostedBy: ''
+>>>>>>> dev
 }
 
 class EventForm extends Component {
 
+<<<<<<< HEAD
   constructor (props){
     super(props);
     this.state = {
@@ -21,6 +28,11 @@ class EventForm extends Component {
     }
     this.onFormSubmit = this.onFormSubmit.bind(this);
 }
+=======
+  state = {
+    event: emptyEvent
+  }
+>>>>>>> dev
 
   componentDidMount() {
     if (this.props.selectedEvent !== null) {
@@ -39,12 +51,20 @@ class EventForm extends Component {
   }
 
   onFormSubmit = (evt) => {
+<<<<<<< HEAD
+=======
+    evt.preventDefault();
+>>>>>>> dev
     if (this.state.event.id) {
       this.props.updateEvent(this.state.event);
     } else {
       this.props.createEvent(this.state.event)
     }
+<<<<<<< HEAD
     evt.preventDefault();
+=======
+
+>>>>>>> dev
   }
 
   onInputChange = (evt) => {
@@ -70,7 +90,11 @@ class EventForm extends Component {
             <label>Event Date</label>
             <input name='date' onChange={this.onInputChange} value={event.date} type="date" placeholder="Event Date" />
           </Form.Field>
+<<<<<<< HEAD
           <Form.Field>
+=======
+         <Form.Field>
+>>>>>>> dev
             <label>Event Category
               <select name='category' value={event.category} onChange={this.onInputChange}>
                 <option value="culture">Culture</option>
