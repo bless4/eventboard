@@ -64,6 +64,18 @@ class EventForm extends Component {
             <label>Event Date</label>
             <input name='date' onChange={this.onInputChange} value={event.date} type="date" placeholder="Event Date" />
           </Form.Field>
+         <Form.Field>
+            <label>Event Category
+              <select name='category' value={event.category} onChange={this.onInputChange}>
+                <option value="culture">Culture</option>
+                <option value="drinks">Drinks</option>
+              </select>
+            </label>
+          </Form.Field>
+          <Form.Field>
+            <label>Event Description</label>
+            <textarea name='description' onChange={this.onInputChange} value={event.description} placeholder="Event Description" />
+          </Form.Field>
           <Form.Field>
             <label>City</label>
             <input name='city' onChange={this.onInputChange} value={event.city} placeholder="City event is taking place" />
