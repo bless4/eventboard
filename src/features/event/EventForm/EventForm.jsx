@@ -4,9 +4,12 @@ import { Segment, Form, Button } from 'semantic-ui-react';
 const emptyEvent = {
   title: '',
   date: '',
+  category: '',
+  description: '',
   city: '',
   venue: '',
-  hostedBy: ''
+  hostedBy: '',
+  hostPhotoURL:''
 }
 
 class EventForm extends Component {
@@ -38,7 +41,6 @@ class EventForm extends Component {
     } else {
       this.props.createEvent(this.state.event)
     }
-
   }
 
   onInputChange = (evt) => {
