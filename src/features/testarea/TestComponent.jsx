@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Button } from 'semantic-ui-react';
 import { connect } from 'react-redux';
-// import Script from 'react-load-script';
-// import GoogleMapReact from 'google-map-react';
+ import Script from 'react-load-script';
+ import GoogleMapReact from 'google-map-react';
 import PlacesAutocomplete, {
   geocodeByAddress,
   getLatLng
@@ -62,6 +62,12 @@ class TestComponent extends Component {
     const { incrementAsync, decrementAsync, data, openModal, loading } = this.props;
     return (
       <div>
+       <script
+       url='https://maps.googleapis.com/maps/api/js?key=AIzaSyD5oj9anHR4yf1J_EvRzXTZQAd2liSnehM&libraries=places'
+       onLoad = {this.handleScriptLoad}
+       />
+
+        
         <h1>Test Area</h1>
         <h3>The answer is: {data}</h3>
         <Button loading={loading} onClick={incrementAsync} color="green" content="Increment" />
@@ -70,13 +76,16 @@ class TestComponent extends Component {
         <br />
         <br />
         <form onSubmit={this.handleFormSubmit}>
-          {this.state.scriptLoaded && (
+          {this.state.scriptLoaded && 
             <PlacesAutocomplete inputProps={inputProps} />
-          )}
+          }
           <button type="submit">Submit</button>
         </form>
 
       </div>
+
+      
+      
     );
   }
 }
